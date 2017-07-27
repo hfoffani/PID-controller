@@ -34,8 +34,8 @@ int main()
 
   PID pid;
   // : Initialize the pid variable.
-  const double Kp = 0.08;
-  const double Ki = 0.0001;
+  const double Kp = 0.07;
+  const double Ki = 0.00001;
   const double Kd = 3.3;
   pid = PID();
   pid.Init(Kp, Ki, Kd);
@@ -74,8 +74,8 @@ int main()
                         - pid.Kd * pid.d_error
                         - pid.Ki * pid.i_error;
 
-          if (steer_value < -1.) steer_value = -1.;
-          else if (steer_value > 1.) steer_value = 1.;
+          // if (steer_value < -1.) steer_value = -1.;
+          // else if (steer_value > 1.) steer_value = 1.;
           
           // another PID to fix the speed of the car
           pid_th.UpdateError(speed - cruise_speed);
