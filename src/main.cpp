@@ -73,6 +73,9 @@ int main()
           steer_value = - pid.Kp * pid.p_error
                         - pid.Kd * pid.d_error
                         - pid.Ki * pid.i_error;
+
+          if (steer_value < -1.) steer_value = -1.;
+          else if (steer_value > 1.) steer_value = 1.;
           
           // another PID to fix the speed of the car
           pid_th.UpdateError(speed - cruise_speed);
