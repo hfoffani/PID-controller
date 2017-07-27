@@ -1,6 +1,8 @@
 #ifndef PID_H
 #define PID_H
 
+#include <vector>
+
 class PID {
 public:
   /*
@@ -41,6 +43,10 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+
+private:
+  std::vector<double> rollingaccumulator;
+  int rollingindex;
 };
 
 #endif /* PID_H */
