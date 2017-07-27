@@ -36,7 +36,7 @@ void PID::UpdateError(double cte) {
     rollingindex = (rollingindex + 1) % WINDOWSIZE;
     double head  = rollingaccumulator[rollingindex];
     rollingaccumulator[rollingindex] = cte ;
-    i_error += head + cte ;
+    i_error += cte - head;
 }
 
 
