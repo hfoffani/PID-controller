@@ -34,9 +34,9 @@ int main()
 
   PID pid;
   // : Initialize the pid variable.
-  const double Kp = 0.06;
+  const double Kp = 0.065;
   const double Ki = 0.00001;
-  const double Kd = 4.;
+  const double Kd = 3.3;
   pid = PID();
   pid.Init(Kp, Ki, Kd);
 
@@ -81,10 +81,10 @@ int main()
                             - pid_th.Ki * pid_th.i_error;
 
           // DEBUG
-          // std::cout << "CTE: " << cte
-          //           << " Steering Value: " << steer_value
-          //           << " Throttle Value: " << throttle
-          //           << std::endl;
+          std::cout << "CTE: " << cte
+                    << " Steering Value: " << steer_value
+                    << " Throttle Value: " << throttle
+                    << std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
