@@ -23,7 +23,7 @@ void PID::Init(double Kp, double Ki, double Kd) {
     i_error = 0.0;
     d_error = 0.0;
 
-    rollingaccumulator.resize(WINDOWSIZE);
+    rollingaccumulator.resize(WINDOWSIZE, 0.0);
     rollingindex = WINDOWSIZE - 1;
 }
 
@@ -31,12 +31,16 @@ void PID::UpdateError(double cte) {
 
     d_error = cte - p_error;
     p_error = cte;
-    // i_error += cte;
 
-    rollingindex = (rollingindex + 1) % WINDOWSIZE;
-    double head  = rollingaccumulator[rollingindex];
-    rollingaccumulator[rollingindex] = cte ;
-    i_error += cte - head;
+    if (Ki != 0.0 && rollingaccumulator.size() > 0) {
+        rollingindex = (rollingindex + 1) % WINDOWSIZE;
+        double head  = rollingaccumulator[rollingindex];
+        rollingaccumulator[rollingindex] = cte ;
+        i_error += cte - head;
+        // cout << "i error: " << i_error << endl;
+    } else {
+        i_error += cte;
+    }
 }
 
 
