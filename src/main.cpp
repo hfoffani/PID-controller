@@ -43,7 +43,7 @@ int main()
   // another PID for throttle.
   PID pid_th = PID();
   pid_th.Init(0.1, 0, 0);
-  const double cruise_speed = 30; // in miles per hour.
+  const double cruise_speed = 50; // in miles per hour.
 
   h.onMessage([&pid, &pid_th, &cruise_speed](
     uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
