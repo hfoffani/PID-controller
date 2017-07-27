@@ -42,8 +42,8 @@ int main()
 
   // another PID for throttle.
   PID pid_th = PID();
-  pid_th.Init(0.1, 0, 0.1);
-  const double cruise_speed = .30; // in 100 miles per hour.
+  pid_th.Init(0.1, 0, 0);
+  const double cruise_speed = 30; // in miles per hour.
 
   h.onMessage([&pid, &pid_th, &cruise_speed](
     uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
@@ -74,12 +74,16 @@ int main()
                         - pid.Kd * pid.d_error
                         - pid.Ki * pid.i_error;
           
-          pid_th.UpdateError(cruise_speed - speed);
+          // another PID to fix the speed of the car
+          pid_th.UpdateError(speed - cruise_speed);
           double throttle = - pid_th.Kp * pid_th.p_error
                             - pid_th.Kd * pid_th.d_error
                             - pid_th.Ki * pid_th.i_error;
           // DEBUG
-          // std::cout << "CTE: " << cte << " Steering Value: " << steer_value << std::endl;
+          // std::cout << "CTE: " << cte
+          //           << " Steering Value: " << steer_value
+          //           << " Throttle Value: " << throttle
+          //           << std::endl;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
