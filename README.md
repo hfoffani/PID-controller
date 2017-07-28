@@ -4,29 +4,41 @@ A C++ implementation of a PID Controller.
 
 PID (Proportional, Integral and Derivative) Controllers are widely used
 in control systems in many industries. This project applies the controller
-to a self-driving car simulator.
+to a self-driving car simulator. It consists of three terms (controls) that
+added together gives the next value to apply to the actuator.
+
+This project uses two independent PID controllers for two actuators: the
+steering wheel and the throttle.
 
 ### Algorithm explanation
 
 **RUBRIC Reflection Criteria 1**
 **Describe the effect each of the P, I, D components had in your implementation.**
 
-Each of the three hyperparameters P, I and D allows to tune the controller in
-different ways.
+Each of the three hyperparameters P, I and D control the actuator in three
+different ways:
 
-The *P (proportional)* handles 
+The *P (proportional)* control is the main drive. In the steering wheel it
+would try to keep the car as close as possible to the desired path. Small
+changes in this value move the car inside or outside the lane.
 
-The *D (derivative)* handles 
+The *D (derivative)* control predicts future behaviour. If the error rate
+increases it accelerate the actuator and viceversa providing stability to
+the system. Here it smoothes the car movement canceling the left-right
+oscillation.
 
-The *I (integral)* handles 
+The *I (integral)* control makes up for the total error (the current
+error and all the previous ones). It helps to reach to a zero error
+state faster. In this project I found that the values should be
+very small. If the value is big it makes the car oscillate again thus
+confounding with the effect of the D hyperparameter.
 
-
-My expectations.
 
 **Animation Results.**
 
 Here is a short recording of the simulation with the last version of
-the hyperparameters.
+the hyperparameters. The video is an animated GIF that weights 18MB,
+it will take a few seconds before it starts to play.
 
 ![Recorded video](./imgs/pidctrl-final.gif "Recorded Video. 18MB GIF")
 
