@@ -52,11 +52,11 @@ I tuned the control loop manually. Although there are algorithms available
 to do it automatically I prefered to *see* the effect of the parameters and
 their interaction. I followed [George Gillard advice](https://udacity-reviews-uploads.s3.amazonaws.com/_attachments/41330/1493863065/pid_control_document.pdf):
 
-*1. Set Kp, Ki,and Kd to 0. This will disable them for now.*
-*2. Increase Kp until the error is fairly small, but it still gets from the beginning to nearly the end quickly enough.*
-*3. Increase Kd until any overshoot you may have is fairly minimal. But be careful with Kd – too much will make it overshoot.*
-*4. Increase Ki until any error that is still existing is eliminated. Start with a really small number for Ki, don't be surprised if it is as small as 0.0001 or even smaller.*
-*5. Change around the constants a little bit to get it working to the best performance.*
+1. Set Kp, Ki, and Kd to 0. This will disable them for now.
+2. Increase Kp until the error is fairly small, but it still gets from the beginning to nearly the end quickly enough.
+3. Increase Kd until any overshoot you may have is fairly minimal. But be careful with Kd – too much will make it overshoot.
+4. Increase Ki until any error that is still existing is eliminated. Start with a really small number for Ki, don't be surprised if it is as small as 0.0001 or even smaller.
+5. Change around the constants a little bit to get it working to the best performance.
 
 It was a bit tedious but it seemed to work although the car was unable to finish the track.
 My intuition was that the car was accelerating along the race circuit so while the
