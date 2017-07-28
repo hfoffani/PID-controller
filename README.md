@@ -22,6 +22,8 @@ My expectations.
 
 Explanation
 
+PID for throttle, Decrease speed.
+
 **Animation before adjustments.**
 
 
@@ -58,11 +60,19 @@ There's an experimental patch for windows in this [PR](https://github.com/udacit
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./pid`. 
-5. Run the simulator, browse to PID controller and start it.
+5. Run the simulator, browse to the "PID Controller Project" with the Next arrow and Select it.
 
 ---
 
-### Contact
+### Acknowledgments
 
-me
+Thanks to Udacity for the learning experience.
+
+### License
+
+This project is publish under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+
+### Who do I talk to?
+
+For questions or requests post an issue here or tweet me at @herchu
 
