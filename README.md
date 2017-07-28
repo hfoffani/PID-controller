@@ -25,7 +25,7 @@ Explanation
 
 ---
 
-## Dependencies
+### Dependencies
 
 * cmake >= 3.5
  * All OSes: [click here for installation instructions](https://cmake.org/install/)
@@ -50,11 +50,17 @@ Explanation
 
 There's an experimental patch for windows in this [PR](https://github.com/udacity/CarND-PID-Control-Project/pull/3)
 
-## Basic Build Instructions
+### Basic Build Instructions
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./pid`. 
 5. Run the simulator, browse to PID controller and start it.
+
+---
+
+### Contact
+
+me
 
