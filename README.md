@@ -1,4 +1,4 @@
-# PID Control
+# PID Controller
 
 **short description**
 
