@@ -15,6 +15,8 @@ I: ???
 My expectations.
 
 **Animation Results.**
+![Recorded video](./imgs/pidctrl-final.gif "Recorded Video. 18MB GIF")
+
 
 ### Final Hyperparameters
 
