@@ -12,10 +12,10 @@ steering wheel and the throttle.
 
 ### Algorithm explanation
 
-**RUBRIC Reflection Criteria 1**
+**RUBRIC Reflection Criteria 1.**
 **Describe the effect each of the P, I, D components had in your implementation.**
 
-Each of the three hyperparameters P, I and D control the actuator in three
+Each of the three hyperparameters P, I and D controls the actuator in three
 different ways:
 
 The *P (proportional)* control is the main drive. In the steering wheel it
@@ -45,11 +45,11 @@ it will take a few seconds before it starts to play.
 
 ### Final Hyperparameters
 
-**RUBRIC Reflection Criteria 2**
+**RUBRIC Reflection Criteria 2.**
 **Describe how the final hyperparameters were chosen.**
 
 I tuned the control loop manually. Although there are algorithms available
-to do it automatically I prefered to *see* the effect of the parameters and
+to do it automatically I preferred to *see* the effect of the parameters and
 their interaction. I followed [George Gillard advice](https://udacity-reviews-uploads.s3.amazonaws.com/_attachments/41330/1493863065/pid_control_document.pdf):
 
 1. Set Kp, Ki, and Kd to 0. This will disable them for now.
@@ -59,15 +59,16 @@ their interaction. I followed [George Gillard advice](https://udacity-reviews-up
 5. Change around the constants a little bit to get it working to the best performance.
 
 It was a bit tedious but it seemed to work although the car was unable to finish the track.
-My intuition was that the car was accelerating along the race circuit so while the
-values were good for the initial race they would be invalid towards the end. I also suspected
-that adding the total error (integral error) for the whole track was not correct, i.e. the
+My intuition was that the car was accelerating along the race circuit (the first version has
+a fixed throttle value of .30) so while the
+values were good for the initial section they would be invalid towards the end. I also suspected
+that adding the total error (integral error) for the whole run was not correct, i.e. the
 errors in the first curves should not affect the steering of the last curves.
 
 So I decided to add another PID controller for the thrust and implemented a rolling
 accumulator for the integral error.
 
-I tried different speeds and settle to a moderatly slow velocity of 25MPH.
+I tried different speeds and settle to a moderately slow velocity of 25MPH.
 I had to tune the hyperparameters again which proved that the values depend on the speed.
 The final values for the steering wheel controller are:
 
@@ -75,7 +76,7 @@ The final values for the steering wheel controller are:
     I == 0.00003 (with a 25 slots window)
     D == 1.6
 
-For reference, the throtle controller has PID of 0.1, 0 and 0 respectevily.
+For reference, the throttle controller has PID of 0.1, 0 and 0 respectively.
 
 
 ---
