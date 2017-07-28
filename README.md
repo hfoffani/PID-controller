@@ -45,20 +45,33 @@ it will take a few seconds before it starts to play.
 
 ### Final Hyperparameters
 
-**RUBRIC Reflection Criteria 1**
+**RUBRIC Reflection Criteria 2**
 **Describe how the final hyperparameters were chosen.**
 
-Explanation
+I tuned the control loop manually. Although there are algorithms available
+to do it automatically I prefered to *see* the effect of the parameters and
+their interaction. I followed [George Gillard advice](https://udacity-reviews-uploads.s3.amazonaws.com/_attachments/41330/1493863065/pid_control_document.pdf):
 
-PID for throttle, Decrease speed.
+1. Set Kp, Ki,and Kd to 0. This will disable them for now.
+2. Increase Kp until the error is fairly small, but it still gets from the beginning to nearly the end quickly enough.
+3. Increase Kd until any overshoot you may have is fairly minimal. But be careful with Kd – too much will make it overshoot.
+4. Increase Ki until any error that is still existing is eliminated. Start with a really small number for Ki, don't be surprised if it is as small as 0.0001 or even smaller.
+5. Change around the constants a little bit to get it working to the best performance.
 
-P:
+It was a bit tedious but it seemed to work although the car was unable to finish the track.
+My intuition was that the car was accelerating along the race circuit so while the
+values were good for the initial race they would be invalid towards the end. ALSO ****** WINDOW.
 
-I:
+So I decided to add another PID controller for the thrust. I tried different speeds and
+settle to a moderatly slow velocity of 25MPH. I had to tune the hyperparameters again
+which proved that the values depend on the speed. The final values for the steering
+wheel controller are:
 
-D:
+    P == 0.2
+    I == 0.00003 (with a 25 slots window)
+    D == 1.6
 
-
+For reference, the throtle controller has PID of 0.1, 0 and 0 respectevily.
 
 
 ---
