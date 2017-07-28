@@ -60,12 +60,16 @@ their interaction. I followed [George Gillard advice](https://udacity-reviews-up
 
 It was a bit tedious but it seemed to work although the car was unable to finish the track.
 My intuition was that the car was accelerating along the race circuit so while the
-values were good for the initial race they would be invalid towards the end. ALSO ****** WINDOW.
+values were good for the initial race they would be invalid towards the end. I also suspected
+that adding the total error (integral error) for the whole track was not correct, i.e. the
+errors in the first curves should not affect the steering of the last curves.
 
-So I decided to add another PID controller for the thrust. I tried different speeds and
-settle to a moderatly slow velocity of 25MPH. I had to tune the hyperparameters again
-which proved that the values depend on the speed. The final values for the steering
-wheel controller are:
+So I decided to add another PID controller for the thrust and implemented a rolling
+accumulator for the integral error.
+
+I tried different speeds and settle to a moderatly slow velocity of 25MPH.
+I had to tune the hyperparameters again which proved that the values depend on the speed.
+The final values for the steering wheel controller are:
 
     P == 0.2
     I == 0.00003 (with a 25 slots window)
