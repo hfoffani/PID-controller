@@ -80,10 +80,8 @@ int main()
                             - pid_th.Kd * pid_th.d_error
                             - pid_th.Ki * pid_th.i_error;
 
-          // if (steer_value < -1.) steer_value = -1.;
-          // else if (steer_value > 1.) steer_value = 1.;
-          // if (steer_value < -1.) std::cout << "LEEFT" << std::endl;
-          // else if (steer_value > 1.) std::cout << "RIIGHT" << std::endl;
+          if (steer_value < -1.) steer_value = -1.;
+          else if (steer_value > 1.) steer_value = 1.;
 
           // DEBUG
           // std::cout << "CTE: " << cte
