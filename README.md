@@ -1,30 +1,52 @@
 # PID Controller
 
-**short description**
+A C++ implementation of a PID Controller.
 
-**long description of the project**
+PID (Proportional, Integral and Derivative) Controllers are widely used
+in control systems in many industries. This project applies the controller
+to a self-driving car simulator.
 
 ### Algorithm explanation
 
-Short description of the algorithm.
+**RUBRIC Reflection Criteria 1**
+**Describe the effect each of the P, I, D components had in your implementation.**
 
-P: ???
-D: ???
-I: ???
+Each of the three hyperparameters P, I and D allows to tune the controller in
+different ways.
+
+The *P (proportional)* handles 
+
+The *D (derivative)* handles 
+
+The *I (integral)* handles 
+
 
 My expectations.
 
 **Animation Results.**
+
+Here is a short recording of the simulation with the last version of
+the hyperparameters.
+
 ![Recorded video](./imgs/pidctrl-final.gif "Recorded Video. 18MB GIF")
 
 
 ### Final Hyperparameters
 
+**RUBRIC Reflection Criteria 1**
+**Describe how the final hyperparameters were chosen.**
+
 Explanation
 
 PID for throttle, Decrease speed.
 
-**Animation before adjustments.**
+P:
+
+I:
+
+D:
+
+
 
 
 ---
