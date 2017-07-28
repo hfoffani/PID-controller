@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#define WINDOWSIZE 30
+#define WINDOWSIZE 25
 
 using namespace std;
 
