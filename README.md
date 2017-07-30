@@ -127,6 +127,11 @@ Thanks to Udacity for the learning experience.
 
 This project is publish under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
 
+### Contributions
+
+I gratefully honor Pull Requests.
+Please, consider formatting the code with K&R style and 4 spaces tabs.
+
 ### Who do I talk to?
 
 For questions or requests post an issue here or tweet me at @herchu
