@@ -2,7 +2,7 @@
 
 A C++ implementation of a PID Controller.
 
-PID (Proportional, Integral and Derivative) Controllers are widely used
+PID (Proportional, Integral, and Derivative) Controllers are widely used
 in control systems in many industries. This project applies the controller
 to a self-driving car simulator. It consists of three terms (controls) that
 added together gives the next value to apply to the actuator.
@@ -15,18 +15,18 @@ steering wheel and the throttle.
 Each of the three hyperparameters P, I and D controls the actuator in three
 different ways:
 
-The *P (proportional)* control is the main drive. In the steering wheel it
+The *P (proportional)* control is the main drive. In the steering wheel, it
 would try to keep the car as close as possible to the desired path. Small
 changes in this value move the car inside or outside the lane.
 
-The *D (derivative)* control predicts future behaviour. If the error rate
-increases it accelerate the actuator and viceversa providing stability to
+The *D (derivative)* control predicts future behavior. If the error rate
+increases it accelerates the actuator and vice-versa providing stability to
 the system. Here it smoothes the car movement canceling the left-right
 oscillation.
 
 The *I (integral)* control makes up for the total error (the current
 error and all the previous ones). It helps to reach to a zero error
-state faster. In this project I found that the values should be
+state faster. In this project, I found that the values should be
 very small. If the value is big it makes the car oscillate again thus
 confounding with the effect of the D hyperparameter.
 
@@ -37,7 +37,7 @@ Here is a short recording of the simulation with the last version of
 the hyperparameters. The video is an animated GIF that weights 18MB,
 it will take a few seconds before it starts to play.
 
-![Recorded video](./imgs/pidctrl-final.gif "Recorded Video. 18MB GIF")
+![Recorded Video](./imgs/pidctrl-final.gif "Recorded Video. 18MB GIF")
 
 
 ### Final Hyperparameters
@@ -125,7 +125,7 @@ Thanks to Udacity for the learning experience.
 
 ### License
 
-This project is publish under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+This project is published under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
 
 ### Contributions
 
