@@ -15,9 +15,9 @@ steering wheel and the throttle.
 Each of the three hyperparameters P, I and D controls the actuator in three
 different ways:
 
-The *P (proportional)* control is the main drive. In the steering wheel, it
-would try to keep the car as close as possible to the desired path. Small
-changes in this value move the car inside or outside the lane.
+The *P (proportional)* control is the primary drive. In the steering wheel, it
+would try to keep the vehicle as close as possible to the desired path. Small
+changes in this value move the auto inside or outside the lane.
 
 The *D (derivative)* control predicts future behavior. If the error rate
 increases it accelerates the actuator and vice-versa providing stability to
@@ -27,14 +27,14 @@ oscillation.
 The *I (integral)* control makes up for the total error (the current
 error and all the previous ones). It helps to reach to a zero error
 state faster. In this project, I found that the values should be
-very small. If the value is big it makes the car oscillate again thus
+minimal. If the value is big, it makes the vehicle oscillate again thus
 confounding with the effect of the D hyperparameter.
 
 
 **Animation Results.**
 
 Here is a short recording of the simulation with the last version of
-the hyperparameters. The video is an animated GIF that weights 18MB,
+the hyperparameters. The video is an animated GIF that weights 18MB;
 it will take a few seconds before it starts to play.
 
 ![Recorded Video](./imgs/pidctrl-final.gif "Recorded Video. 18MB GIF")
@@ -43,7 +43,7 @@ it will take a few seconds before it starts to play.
 ### Final Hyperparameters
 
 I tuned the control loop manually. Although there are algorithms available
-to do it automatically I preferred to *see* the effect of the parameters and
+to do it automatically, I preferred to *see* the effect of the parameters and
 their interaction. I followed
 [George Gillard advice](https://udacity-reviews-uploads.s3.amazonaws.com/_attachments/41330/1493863065/pid_control_document.pdf):
 
@@ -58,11 +58,11 @@ small as 0.0001 or even smaller.
 5. Change around the constants a little bit to get it working to the
 best performance.
 
-It was a bit tedious but it seemed to work although the car was unable to
-finish the track.
+It was a bit tedious, but it seemed to work although the automobile
+was unable to finish the track.
 My intuition was that the car was accelerating along the race circuit
 (the first version has a fixed throttle value of .30) so while the
-values were good for the initial section they would be invalid towards
+values were good for the initial section, they would be invalid towards
 the end. I also suspected that adding the total error (integral error)
 for the whole run was not correct, i.e. the errors in the first curves
 should not affect the steering of the last curves.
@@ -70,7 +70,7 @@ should not affect the steering of the last curves.
 So I decided to add another PID controller for the thrust and
 implemented a rolling accumulator for the integral error.
 
-I tried different speeds and settle to a moderately slow velocity of
+I tried different speeds and settled to a moderately slow velocity of
 25MPH. I had to tune the hyperparameters again which proved that the
 values depend on the speed.
 The final values for the steering wheel controller are:
@@ -130,7 +130,7 @@ This project is published under the [Apache License](http://www.apache.org/licen
 ### Contributions
 
 I gratefully honor Pull Requests.
-Please, consider formatting the code with K&R style and 4 spaces tabs.
+Please, consider formatting the code with K&R style and four spaces tabs.
 
 ### Who do I talk to?
 
