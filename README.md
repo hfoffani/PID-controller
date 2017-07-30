@@ -134,5 +134,5 @@ Please, consider formatting the code with K&R style and four spaces tabs.
 
 ### Who do I talk to?
 
-For questions or requests post an issue here or tweet me at @herchu
-
+For questions or requests post an issue here or tweet me at
+[@herchu](http://twitter.com/herchu)
